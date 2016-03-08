@@ -53,11 +53,11 @@ if(window.location.hash) {
 //    }
 //}
 //
-//var lat = pos(1)
+//pos.lat
 //var lon= pos(2)
 //
 //aClient = new HttpClient();
-//aClient.get('https://api.instagram.com/v1/locations/search?'+ lat + '&lng=' + lon + '&access_token= 1572517173.2d63a38.2f4572cf13394dd2aa461c1cde48d5fb
+//aClient.get('https://api.instagram.com/v1/locations/search?lat='+ pos.lat + '&lng=' + lon + '&access_token= '+token
 //', function(response) {
 //    // do something with response
 //});
