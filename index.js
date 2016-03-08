@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//var location = {};
+>>>>>>> parent of e58f92a... location.lon
 =======
 //var location = {};
 >>>>>>> parent of e58f92a... location.lon
@@ -60,15 +64,7 @@ var HttpClient = function() {
 }
 
 aClient = new HttpClient();
-<<<<<<< HEAD
-var location = navigator.geolocation.getCurrentPosition(function(position){
-    return { lat: position.coords.latitude,
-             lon: position.coords.longitude}
-});
-aClient.get('https://api.instagram.com/v1/locations/search?lat='+location.lat+'&lng='+location.lng+'&access_token='+token), 
-=======
 aClient.get('https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&access_token='+token), 
->>>>>>> parent of e58f92a... location.lon
     function(response) {
     console.log(response);
 };
