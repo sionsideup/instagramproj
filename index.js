@@ -13,11 +13,14 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-//        location = pos;
+       
 
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       map.setCenter(pos);
+        
+         location = pos;
+        
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
