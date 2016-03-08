@@ -40,25 +40,22 @@ if(window.location.hash) {
 }
 
 
-//var HttpClient = function() {
-//    this.get = function(aUrl, aCallback) {
-//        var anHttpRequest = new XMLHttpRequest();
-//        anHttpRequest.onreadystatechange = function() { 
-//            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-//                aCallback(anHttpRequest.responseText);
-//        }
-//
-//        anHttpRequest.open( "GET", aUrl, true );            
-//        anHttpRequest.send( null );
-//    }
-//}
-//
-//pos.lat
-//var lon= pos(2)
-//
-//aClient = new HttpClient();
-//aClient.get('https://api.instagram.com/v1/locations/search?lat='+ pos.lat + '&lng=' + lon + '&access_token= '+token
-//', function(response) {
-//    // do something with response
-//});
+var HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function() { 
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
+
+        anHttpRequest.open( "GET", aUrl, true );            
+        anHttpRequest.send( null );
+    }
+}
+
+aClient = new HttpClient();
+aClient.get('https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&access_token='+token), 
+    function(response) {
+    console.log(response);
+};
 ////http://stackoverflow.com/questions/247483/http-get-request-in-javascript
