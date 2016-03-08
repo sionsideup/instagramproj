@@ -1,4 +1,3 @@
-var location = {};
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
@@ -18,8 +17,6 @@ function initMap() {
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       map.setCenter(pos);
-        
-         location = pos;
         
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -59,6 +56,10 @@ var HttpClient = function() {
 }
 
 aClient = new HttpClient();
+var location = navigator.geolocation.getCurrentPosition(function(position){
+    return { lat: position.coords.latitude,
+             lon: position.coords.longitude}
+});
 aClient.get('https://api.instagram.com/v1/locations/search?lat='+location.lat+'&lng='+location.lng+'&access_token='+token), 
     function(response) {
     console.log(response);
