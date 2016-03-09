@@ -29,8 +29,8 @@ function initMap() {
             url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&'+token,
             success: function(data) {
                 console.log(data);
-                for (i  in data.length){
-                    consolelog(data[i]);
+                for (i in data.length){
+                    console.log(data[i]);
                 }
             }            
         });
