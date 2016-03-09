@@ -56,6 +56,8 @@ if (navigator.geolocation) {
                     console.log("test");
                     console.log(data);
                     console.log(data.data);
+                    console.log(i);
+                    console.log(data.data[i]);
                     $.ajax({
                         type: "GET",
                         dataType: "jsonp",
