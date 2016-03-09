@@ -40,11 +40,13 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 if(window.location.hash) {
     var token = window.location.hash;
     console.log(token);
+    token = token.substring(1,token.length);
+    console.log(token);
     $.ajax({
     type: "GET",
     dataType: "jsonp",
     cache: false,
-    url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&access_token='+token,
+    url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&'+token,
     success: function(data) {
         console.log(data);
         }
