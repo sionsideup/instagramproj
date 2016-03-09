@@ -3,7 +3,7 @@ var pos= "pos";
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
-    zoom: 10
+    zoom: 3
   });
   var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -39,6 +39,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 if(window.location.hash) {
     var token = window.location.hash;
+    console.log(token);
     $.ajax({
     type: "GET",
     dataType: "jsonp",
