@@ -80,7 +80,7 @@
                     // use data.data[i].latitude, data.data[i].longitude to get position to add each marker, you can also get the name values here incase you want to add a location to each marker so that the user will know what the location is for the marker
                     $.ajax({
                         type: "GET",
-                        dataType "jsonp",
+                        dataType: "jsonp",
                         cache: false,
                         url: 'https://api.instagasdfasjdfjklsfjklfsdaklj;afsdjkl' //sion fill in this part :D
                         success: function(data) {
