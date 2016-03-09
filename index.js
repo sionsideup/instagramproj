@@ -21,7 +21,7 @@ if (navigator.geolocation) {
             var token = window.location.hash;
 //            console.log(token);
             token = token.substring(1,token.length);
-//            console.log(token);
+            console.log(token);
             $.ajax({
                 type: "GET",
                 dataType: "jsonp",
@@ -61,7 +61,7 @@ if (navigator.geolocation) {
                             type: "GET",
                             dataType: "jsonp",
                             cache: false,
-                            url: 'https://api.instagram.com/v1/locations/'+ data.data[i].id +'/media/recent?'+token,
+                            url: 'https://api.instagram.com/v1/locations/'+ data.data[i].id +'/media/recent?access_token='+token,
                             success: function(data) {
                                 // in here you want to add these photos to the marker (for loop)
                                 console.log(data);
