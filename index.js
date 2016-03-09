@@ -31,9 +31,6 @@ if (navigator.geolocation) {
 //                    console.log(data);
                     for (var i = 0; i < data.data.length; i++){
 //                        console.log(data.data[i]);
-                        
-                        setMarkets(map);
-                        
                         function setMarkers(map) {
                             var image = {
                                 url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
@@ -54,6 +51,7 @@ if (navigator.geolocation) {
                                 zIndex: i
                             });
                         }
+                        setMarkets(map);
                     }
                     $.ajax({
                         type: "GET",
