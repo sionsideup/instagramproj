@@ -1,5 +1,3 @@
-var pos= "pos";
-
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
@@ -19,6 +17,23 @@ function initMap() {
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       map.setCenter(pos);
+      if(window.location.hash) {
+        var token = window.location.hash;
+        console.log(token);
+        token = token.substring(1,token.length);
+        console.log(token);
+        $.ajax({
+            type: "GET",
+            dataType: "jsonp",
+            cache: false,
+            url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&'+token,
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    } else {
+    window.location.href = "https://api.instagram.com/oauth/authorize/?client_id=2d63a3847c6740b3be538b860ab6d534&redirect_uri=http://sionsideup.github.io/instagramproj&response_type=token&scope=public_content";
+    }
         
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -36,26 +51,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: Your browser doesn\'t support geolocation.');
 }
 
-
-if(window.location.hash) {
-    var token = window.location.hash;
-    console.log(token);
-    token = token.substring(1,token.length);
-    console.log(token);
-    $.ajax({
-    type: "GET",
-    dataType: "jsonp",
-    cache: false,
-    url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&'+token,
-    success: function(data) {
-        console.log(data);
-        }
-});
-
-} else {
-    window.location.href = "https://api.instagram.com/oauth/authorize/?client_id=2d63a3847c6740b3be538b860ab6d534&redirect_uri=http://sionsideup.github.io/instagramproj&response_type=token&scope=public_content";
-    console.log("hello");
-}
 
 
 //var HttpClient = function() {
