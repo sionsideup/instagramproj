@@ -52,22 +52,22 @@ if (navigator.geolocation) {
                             });
                         }
                         setMarkers(map);
-                    }
-                    console.log("test");
-                    console.log(data);
-                    console.log(data.data);
-                    console.log(i);
-                    console.log(data.data[i]);
-                    $.ajax({
-                        type: "GET",
-                        dataType: "jsonp",
-                        cache: false,
-                        url: 'https://api.instagram.com/v1/locations/'+ data.data[i].id +'/media/recent?access_token='+token,
-                        success: function(data) {
-                        // in here you want to add these photos to the marker (for loop)
+                        console.log("test");
                         console.log(data);
-                        }
-                    });
+                        console.log(data.data);
+                        console.log(i);
+                        console.log(data.data[i]);
+                        $.ajax({
+                            type: "GET",
+                            dataType: "jsonp",
+                            cache: false,
+                            url: 'https://api.instagram.com/v1/locations/'+ data.data[i].id +'/media/recent?access_token='+token,
+                            success: function(data) {
+                                // in here you want to add these photos to the marker (for loop)
+                                console.log(data);
+                            }
+                        });
+                    }
                 }
             });            
       } else {
