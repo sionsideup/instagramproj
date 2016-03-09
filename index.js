@@ -82,7 +82,7 @@
                         type: "GET",
                         dataType: "jsonp",
                         cache: false,
-                        url: 'https://api.instagasdfasjdfjklsfjklfsdaklj;afsdjkl' //sion fill in this part :D
+                        url: 'https://api.instagram.com/v1/locations/'+ data.data[i].id +'/media/recent?access_token='+token,
                         success: function(data) {
                         // in here you want to add these photos to the marker (for loop)
                         console.log(data);
