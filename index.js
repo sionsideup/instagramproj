@@ -26,7 +26,7 @@ if (navigator.geolocation) {
                 type: "GET",
                 dataType: "jsonp",
                 cache: false,
-                url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&'+token,
+                url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&distance=5000&'+token,
                 success: function(data) {
 //                    console.log(data);
                     for (var i = 0; i < data.data.length; i++){
