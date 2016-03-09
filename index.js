@@ -29,13 +29,10 @@ function initMap() {
             url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&'+token,
             success: function(data) {
                 console.log(data);
-            }
-            
-            
-            var id= data[array[id]];
-            var lon= data[array[id]]; 
-            var lat= data[array[id]]; 
-            var name= data[array[id]]; 
+                for (i  in data.length){
+                    consolelog(data[i]);
+                }
+            }            
         });
     } else {
     window.location.href = "https://api.instagram.com/oauth/authorize/?client_id=2d63a3847c6740b3be538b860ab6d534&redirect_uri=http://sionsideup.github.io/instagramproj&response_type=token&scope=public_content";
