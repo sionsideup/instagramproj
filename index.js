@@ -31,9 +31,14 @@ function initMap() {
                 console.log(data);
                 for (i in data.data.length){
                     console.log(data.data[i]);
-                }
-            }            
-        });
+                    $.ajax({
+                        type: "GET",
+                        dataType: "jsonp",
+                        cache: false,
+                        url: 'https://api.instagram.com/v1/locations/{location-id}/media/recent?                                                access_token='+token,
+                        success: function(data) {}
+                }          
+        )};
     } else {
     window.location.href = "https://api.instagram.com/oauth/authorize/?client_id=2d63a3847c6740b3be538b860ab6d534&redirect_uri=http://sionsideup.github.io/instagramproj&response_type=token&scope=public_content";
     }
