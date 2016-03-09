@@ -26,7 +26,7 @@ function initMap() {
             type: "GET",
             dataType: "jsonp",
             cache: false,
-            url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&'+'distance=5000'+token,
+            url: 'https://api.instagram.com/v1/locations/search?lat='+pos.lat+'&lng='+pos.lng+'&'+token,
             success: function(data) {
                 console.log(data);
             }
