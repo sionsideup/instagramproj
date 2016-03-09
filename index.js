@@ -51,7 +51,7 @@ if (navigator.geolocation) {
                                 zIndex: i
                             });
                         }
-                        setMarkets(map);
+                        setMarkers(map);
                     }
                     $.ajax({
                         type: "GET",
