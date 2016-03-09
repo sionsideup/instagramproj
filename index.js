@@ -1,17 +1,17 @@
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 15,
-  });
-    
-//    function initMap() {
+//function initMap() {
 //  var map = new google.maps.Map(document.getElementById('map'), {
-//    zoom: 10,
-//    center: {lat: -33.9, lng: 151.2}
+//    center: {lat: -34.397, lng: 150.644},
+//    zoom: 15,
 //  });
-//
-//  setMarkers(map);
-//} 
+    
+    function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: {lat: -33.9, lng: 151.2}
+  });
+
+  setMarkers(map);
+} 
     
   var infoWindow = new google.maps.InfoWindow({map: map});
 
