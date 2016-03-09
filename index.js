@@ -53,6 +53,7 @@ if (navigator.geolocation) {
                         }
                         setMarkers(map);
                     }
+                    console.log(data.data[i]);
                     $.ajax({
                         type: "GET",
                         dataType: "jsonp",
