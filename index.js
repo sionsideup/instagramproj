@@ -31,14 +31,21 @@ function initMap() {
                 console.log(data);
                 for (i in data.data.length){
                     console.log(data.data[i]);
+                    // here you want to add a marker for each location you find 
+                    // use data.data[i].latitude, data.data[i].longitude to get position to add each marker, you can also get the name values here incase you want to add a location to each marker so that the user will know what the location is for the marker
                     $.ajax({
                         type: "GET",
-                        dataType: "jsonp",
+                        dataType "jsonp",
                         cache: false,
-                        url: 'https://api.instagram.com/v1/locations/{location-id}/media/recent?                                                access_token='+token,
-                        success: function(data) {}
-                }          
-        )};
+                        url: 'https://api.instagasdfasjdfjklsfjklfsdaklj;afsdjkl' //sion fill in this part :D
+                        success: function(data) {
+                        // in here you want to add these photos to the marker (for loop)
+                        console.log(data);
+                        }
+                    });
+                }
+            }            
+        });
     } else {
     window.location.href = "https://api.instagram.com/oauth/authorize/?client_id=2d63a3847c6740b3be538b860ab6d534&redirect_uri=http://sionsideup.github.io/instagramproj&response_type=token&scope=public_content";
     }
