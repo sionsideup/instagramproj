@@ -66,17 +66,16 @@
                             coords: [1, 1, 1, 20, 18, 20, 18, 1],
                             type: 'poly'
                           };
-                          for (var i = 0; i < data.data.length; i++) {
                             var marker = new google.maps.Marker({
                               position: {lat: data.data[i].latitude, lng: data.data[i].longitude},
                               map: map,
                               icon: image,
                               shape: shape,
-                              title: data.data[i].name, --------------------?
+                              title: data.data[i].name,
                               zIndex: i
                             });
-                          }
                         }
+                }
                     
                     // use data.data[i].latitude, data.data[i].longitude to get position to add each marker, you can also get the name values here incase you want to add a location to each marker so that the user will know what the location is for the marker
                     $.ajax({
